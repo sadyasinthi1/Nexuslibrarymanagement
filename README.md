@@ -60,4 +60,4 @@ This ZIP is designed to reduce your setup/documentation time, but it cannot repl
 - **Section:** 405
 - **Term:** Fall 2026 (26F)
 - **Solo member:** Sadya Sinthi
-- **Student ID:** [ADD YOUR STUDENT ID]
+- **Student ID:** [301281777]
