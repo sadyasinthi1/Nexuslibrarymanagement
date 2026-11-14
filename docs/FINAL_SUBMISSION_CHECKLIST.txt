@@ -1,0 +1,14 @@
+TEAM NEXUS - SOLO SUBMISSION CHECKLIST
+
+[ ] Confirm solo team allowed with course instructor if required
+[ ] Real name and student ID on slide 1 (course COMP229 / Web Application Development / SEC. 405 now filled in)
+[ ] Your one current, real photograph on slide 2 (no avatar)
+[ ] Sign the solo team contract; export signed PDF
+[ ] Team logo PDF
+[ ] Run and test live MongoDB + all auth/book CRUD routes
+[ ] Replace EDD illustrative preview with live screenshots
+[ ] GitHub repo created with real commits by you
+[ ] Trello/Jira board with Product Backlog and Task Board
+[ ] Export true board/backlog PDF (draft PDF alone is not proof)
+[ ] 5-10 minute demo uploaded; URL collected
+[ ] ZIP project files and supply all required links/PDFs

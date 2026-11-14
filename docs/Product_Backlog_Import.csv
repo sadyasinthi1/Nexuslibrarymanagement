@@ -1,0 +1,13 @@
+ID,Title,Priority,Status,Owner
+P01,Register user,High,Draft code,Sadya Sinthi
+P02,Login + JWT authorization,High,Draft code,Sadya Sinthi
+P03,Connect MongoDB,High,Needs testing,Sadya Sinthi
+P04,Add book,High,Draft code,Sadya Sinthi
+P05,View books,High,Draft code,Sadya Sinthi
+P06,Edit book,High,Draft code,Sadya Sinthi
+P07,Delete book,High,Draft code,Sadya Sinthi
+P08,Run Postman API tests,High,Not started,Sadya Sinthi
+P09,Complete EDD + screenshots,Medium,EDD draft,Sadya Sinthi
+P10,Create GitHub repository,High,Not started,Sadya Sinthi
+P11,Create Trello/Jira board,Medium,Not started,Sadya Sinthi
+P12,Record 5-10 minute video,Medium,Not started,Sadya Sinthi

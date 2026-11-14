@@ -1,0 +1,18 @@
+{
+  "info": {"name": "Team Nexus Mini Library - First Release", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable": [{"key":"base_url","value":"http://localhost:3000"},{"key":"token","value":""},{"key":"book_id","value":""}],
+  "item": [
+    {"name":"Health check", "request":{"method":"GET","url":"{{base_url}}/api/health"}},
+    {"name":"Register", "event":[{"listen":"test","script":{"exec":["if (pm.response.code === 201) { pm.collectionVariables.set('token', pm.response.json().token); }"]}}], "request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"name\":\"Demo Student\",\"email\":\"demo@example.com\",\"password\":\"password123\"}"},"url":"{{base_url}}/api/auth/register"}},
+    {"name":"Login", "event":[{"listen":"test","script":{"exec":["if (pm.response.code === 200) { pm.collectionVariables.set('token', pm.response.json().token); }"]}}], "request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"email\":\"demo@example.com\",\"password\":\"password123\"}"},"url":"{{base_url}}/api/auth/login"}},
+    {"name":"Read my account", "request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{base_url}}/api/users/me"}},
+    {"name":"Update my account", "request":{"method":"PUT","header":[{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"name\":\"Demo Student Updated\"}"},"url":"{{base_url}}/api/users/me"}},
+    {"name":"Add book", "event":[{"listen":"test","script":{"exec":["if (pm.response.code === 201) { pm.collectionVariables.set('book_id', pm.response.json()._id); }"]}}], "request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"title\":\"Clean Code\",\"author\":\"Robert C. Martin\",\"category\":\"Technology\",\"status\":\"Available\"}"},"url":"{{base_url}}/api/books"}},
+    {"name":"List my books", "request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{base_url}}/api/books"}},
+    {"name":"Get book by ID", "request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{base_url}}/api/books/{{book_id}}"}},
+    {"name":"Edit book", "request":{"method":"PUT","header":[{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"status\":\"Borrowed\"}"},"url":"{{base_url}}/api/books/{{book_id}}"}},
+    {"name":"Delete book", "request":{"method":"DELETE","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{base_url}}/api/books/{{book_id}}"}},
+    {"name":"Authorization test: expect 401", "request":{"method":"GET","url":"{{base_url}}/api/books"}},
+    {"name":"Delete my account - use with care", "request":{"method":"DELETE","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{base_url}}/api/users/me"}}
+  ]
+}
